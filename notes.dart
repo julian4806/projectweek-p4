@@ -2,7 +2,7 @@
 
 De categorieën aangeleverd door Peter Bakker;
 
-
+TEST
 	
 Meubels 
 	
