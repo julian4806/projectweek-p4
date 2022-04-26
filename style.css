@@ -1,4 +1,52 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#note {
+  font-style: italic;
+  font-weight: bold;
+  color: #2b3a42;
+}
+
+/* body {
   margin: 0;
   padding: 0;
   font-family: "Source Sans Pro", sans-serif;
@@ -7,17 +55,7 @@ body {
   font-size: 18px;
   box-sizing: border-box;
   background: #edf7f5;
-}
-
-#main {
-  max-width: 960px;
-  min-width: 320px;
-  margin: 0 auto;
-
-  /* 
-  max-width: 70%;
-  margin: 30px auto; */
-}
+} */
 
 #title {
   font-family: "Libre Baskerville", serif;
@@ -27,44 +65,10 @@ body {
   text-transform: uppercase;
 }
 
-#note {
-  font-style: italic;
-  font-weight: bold;
-  color: #2b3a42;
-}
-
-legend {
-  font-weight: 600;
-  padding: 0 10px;
-}
-
-#personal-info {
-  max-width: 100%;
-}
-
-#personal-info td {
-  padding: 10px;
-}
-
-#name,
-#email,
-#number,
-#dropdown {
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 5px;
-  height: 35px;
-}
-
+/* js */
 #subcategory-one,
-#subcategory-two,
-#subcategory-three {
-  /* display: none; */
-  color: red;
-}
-
-th {
-  color: #204e5f;
+#subcategory-two {
+  display: none;
 }
 
 textarea {
@@ -96,38 +100,4 @@ textarea::-webkit-resizer {
 
 #submit:hover {
   background: #2b3a42;
-}
-
-@media only screen and (max-width: 680px) {
-  #personal-info {
-    width: 100%;
-  }
-  #personal-info td {
-    display: block;
-    text-align: center;
-    padding: 5px 10px;
-  }
-
-  legend {
-    text-align: center;
-  }
-
-  #name,
-  #email,
-  #number,
-  #dropdown {
-    width: 90%;
-    padding-left: 5px;
-    margin: 0 auto;
-    height: 35px;
-  }
-
-  /* .checkboxStyle {
-    display: block;
-  } */
-
-  #submit {
-    display: block;
-    margin: 10px auto 10px;
-  }
 }

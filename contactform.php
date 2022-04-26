@@ -5,26 +5,17 @@ if (isset($_POST['submit']) && $_POST['submit'] != "") {
     $number = $_POST['phone'];
     $mailFrom = $_POST['email'];
     $message = $_POST['message'];
+    $subcat1 = $_POST['subcategory-one'];
+    $subcat2 = $_POST['subcategory-two'];
 
     // Mailfunction
     if (isset($_POST['category']) && $_POST['category']) $category = ($_POST['category']);
 
-
-    // zet de mail in de database
     require_once('db_conn.php');
-    // if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password'])) {
-    //     echo 'Please Fill in the blanks';
-    // } else {
-    // $name = $_POST['name'];
-    // $number = $_POST['phone'];
-    // $mailFrom = $_POST['email'];
-    // $message = $_POST['message'];
 
-    $query = " INSERT INTO `messages` (`name` , `email`, `number`, `category`, `description`, `timestamp`) VALUES ('$name', '$mailFrom', '$number', '$category', '$message', CURRENT_TIMESTAMP)";
+
+    $query = " INSERT INTO `messages` (`name` , `email`, `number`, `category`, `description`, `timestamp`) VALUES ('$name', '$mailFrom', '$number', '$category: ($subcat1$subcat2)', '$message', CURRENT_TIMESTAMP)";
     $result = mysqli_query($conn, $query);
-    // zet de mail in de database End
-
-
 
     switch ($category) {
         case 'goederen':
@@ -35,10 +26,6 @@ if (isset($_POST['submit']) && $_POST['submit'] != "") {
             echo "<script>alert('diensten')</script>";
             $mailTo = "210549@student.glu.nl";
             break;
-        case 'levensmiddelen':
-            echo "<script>alert('levensmiddelen')</script>";
-            $mailTo = "210549@student.glu.nl";
-            break;
     }
 
     $subject = "Aanmelding hulp Oekraine";
@@ -47,7 +34,7 @@ if (isset($_POST['submit']) && $_POST['submit'] != "") {
 
         $number = (($number != "") ?  "\ntelefoonnummer: $number" : "")
 
-        .  "\n\n" . "Bericht: \n" . $message;
+        .  "\n\n"  . "categorie: $category ($subcat1$subcat2)" . "\n" . "Bericht: \n $message";
 
     mail($mailTo, $subject, $txt, $headers);
     // Mailfunction End
