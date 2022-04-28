@@ -19,11 +19,11 @@ if (isset($_POST['submit']) && $_POST['submit'] != "") {
 
     switch ($category) {
         case 'goederen':
-            echo "<script>alert('goederen')</script>";
+            // echo "<script>alert('goederen')</script>";
             $mailTo = "210549@student.glu.nl";
             break;
         case 'diensten':
-            echo "<script>alert('diensten')</script>";
+            // echo "<script>alert('diensten')</script>";
             $mailTo = "210549@student.glu.nl";
             break;
     }
