@@ -8,8 +8,6 @@ function validateForm() {
 
   if (a == "" || b == "" || c == "" || d == "" || (s1 == "" && s2 == "")) {
     alert("Vul alle velden in");
-    console.log(s1);
-    console.log(s2);
     return;
   } else {
     submit();
